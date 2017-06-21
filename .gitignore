@@ -90,9 +90,15 @@ ENV/
 # Rope project settings
 .ropeproject
 
+# Pycharm
+.idea*
+
 # CASIA Data (Do not distribute)
 *gnt*
 
 # Project data
 *.jpg
 *.apkg
+
+# Windows image cache file.
+Thumbs.db

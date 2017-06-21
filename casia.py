@@ -46,9 +46,14 @@ class CASIA:
                                        "rerun to try again or download datasets manually."
 
     def load_all(self):
+        """
+        Generator to load all images in the dataset. Yields (image, character) pairs until all images have been loaded.
+        :return: (Pillow.Image.Image, string) tuples
+        """
         for dataset in DATASETS:
             for image, label in load_gnt_dir(dataset):
                 yield image, label
+
 
 
 """
@@ -80,7 +85,7 @@ def get_datasets():
 
             if was_error:
                 print("\nThis recognizer is trained by the CASIA handwriting database.")
-                print("If the download doesn't work, you can get the files at %s" % DATASETS[dataset]["url"])
+                print("If the download doesn't work, you can get the files at %s" % DATASETS[dataset])
                 print("If you have download problems, "
                       "wget may be effective at downloading because of download resuming.")
                 success = False
