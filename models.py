@@ -10,7 +10,7 @@ ANSWER = "{{FrontSide}}<hr id=\"answer\">{{type:Character}}"
 def get_model(example_count=30, debug=False):
     card_fields = [{"name": "Character"}]
     card_templates = []
-    for number in range(1, 31):
+    for number in range(1, example_count+1):
         # Create fields
         field_name = "Example %s" % number
         card_fields.append({
