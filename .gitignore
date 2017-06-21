@@ -92,3 +92,7 @@ ENV/
 
 # CASIA Data (Do not distribute)
 *gnt*
+
+# Project data
+*.jpg
+*.apkg
