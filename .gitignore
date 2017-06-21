@@ -89,3 +89,6 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# CASIA Data (Do not distribute)
+*gnt*
