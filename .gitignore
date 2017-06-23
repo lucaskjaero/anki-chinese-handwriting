@@ -102,3 +102,6 @@ ENV/
 
 # Windows image cache file.
 Thumbs.db
+
+# pycasia project, find at github.com/lucaskjaero/pycasia
+pycasia/*

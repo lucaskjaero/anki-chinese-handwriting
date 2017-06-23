@@ -4,7 +4,7 @@ from random import randrange
 
 import genanki
 
-from casia import CASIA
+from pycasia import CASIA
 from hsk import HSK
 from models import get_model
 
@@ -28,13 +28,13 @@ def create_deck(name, character_list=None, example_count=30):
     deck = genanki.Deck(deck_id, name)
 
     # Initialize data collection
-    data = CASIA()
+    data = CASIA.CASIA()
     deck_data = defaultdict(list)
     media = []
 
     # Get data and create media
     characters_loaded = 0
-    for image, character in data.load_all():
+    for image, character in data.load_character_images():
 
         # Only include requested characters
         if character_list is None or character in character_list:
