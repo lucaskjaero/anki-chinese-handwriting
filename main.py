@@ -3,8 +3,8 @@ from os import remove
 from random import randrange
 
 import genanki
-
 from pycasia import CASIA
+
 from hsk import HSK
 from models import get_model
 
