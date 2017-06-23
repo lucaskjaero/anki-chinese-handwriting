@@ -105,3 +105,4 @@ Thumbs.db
 
 # pycasia project, find at github.com/lucaskjaero/pycasia
 pycasia/*
+.DS_Store

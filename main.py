@@ -1,3 +1,4 @@
+import argparse
 from collections import defaultdict
 from os import remove
 from random import randrange
@@ -76,13 +77,31 @@ def create_deck(name, character_list=None, example_count=30):
         remove(path)
 
 
-def main():
+def make_hsk_decks():
     create_deck("HSK1", character_list=HSK["HSK1"], example_count=EXAMPLE_COUNT)
     create_deck("HSK2", character_list=HSK["HSK2"], example_count=EXAMPLE_COUNT)
     create_deck("HSK3", character_list=HSK["HSK3"], example_count=EXAMPLE_COUNT)
     create_deck("HSK4", character_list=HSK["HSK4"], example_count=EXAMPLE_COUNT)
     create_deck("HSK5", character_list=HSK["HSK5"], example_count=EXAMPLE_COUNT)
     create_deck("HSK6", character_list=HSK["HSK6"], example_count=EXAMPLE_COUNT)
+
+
+def main():
+    # make_hsk_decks()
+    parser = argparse.ArgumentParser(description='Create Anki decks based on characters .')
+    parser.add_argument('name', nargs=1, type=str, help='What do we call the deck?')
+    parser.add_argument('--count', nargs=1, type=int, help="How many examples to create", required=False)
+    parser.add_argument('characters', nargs='*', type=str, help="Which characters should we use?")
+    args = parser.parse_args()
+
+    deck_name = args.name[0]
+    characters = args.characters
+
+    if args.count is not None:
+        example_count = args.count[0]
+        create_deck(deck_name, character_list=characters, example_count=example_count)
+    else:
+        create_deck(deck_name, character_list=characters)
 
 
 if __name__ == '__main__':
